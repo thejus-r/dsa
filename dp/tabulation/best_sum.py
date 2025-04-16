@@ -4,12 +4,13 @@ def bestSum(target: int, numbers: List[int]) -> List[int] | None:
     table[0] = []
 
     for i in range (target + 1):
-        for n in numbers:
-            if table[i] != None and i + n < target + 1:
-                if table[i + n] != None:
-                    continue
-                else:
-                    table[i + n] = table[i] + [n]
+        if table[i] != None:
+            for n in numbers:
+                if i + n < target + 1:
+                    if table[i + n] != None:
+                        continue
+                    else:
+                        table[i + n] = table[i] + [n]
 
     return table[target]
 
