@@ -8,7 +8,6 @@ def gridTraveller(m: int, n: int) -> int:
             if col + 1 <= n: table[row][col+1] += table[row][col]
             if row + 1 <= m: table[row+1][col] += table[row][col]
 
-    print(table)
     return table[m][n]
 
 
